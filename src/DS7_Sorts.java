@@ -61,7 +61,7 @@ public class DS7_Sorts {
     {
         if (from >= to)
             return;
-        int p = data[(from + to) / 2]; // Choose pivot as the middle element
+        int p = data[(from + to) / 2];
         int i = from;
         int j = to;
         while (i <= j)
@@ -84,9 +84,14 @@ public class DS7_Sorts {
     }
     public static void heapSort(int[] data)
     {
+        DS7_MinHeap<Integer> heap = new DS7_MinHeap<>();
         for(int i = 0; i < data.length; i++)
         {
-            
+            heap.insert(data[i]);
+        }
+        for(int i = 0; i < data.length; i++)
+        {
+            data[i] = heap.remove();
         }
     }
 }
